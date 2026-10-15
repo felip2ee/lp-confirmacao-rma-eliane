@@ -35,7 +35,7 @@ export default function Obrigado() {
             alt="Eliane Moreira, a Rainha do Crédito, fazendo o gesto de dinheiro com as mãos"
             width="2000"
             height="1227"
-            className="hero-photo photo-fade mx-auto w-[150%] max-w-none shrink-0 object-contain sm:w-full"
+            className="hero-photo photo-fade mx-auto w-[150%] max-w-none shrink-0 translate-x-[4%] object-contain sm:w-full"
             fetchpriority="high"
           />
         </div>
