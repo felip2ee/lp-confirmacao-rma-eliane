@@ -43,7 +43,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Eliane Moreira. Todos os direitos reservados.</p>
           <p className="flex items-center gap-2">
             <span>Desenvolvido por</span>
-            <img src="/assets/logo-novadigital.webp" alt="Nova Digital" className="h-6 w-auto opacity-90" loading="lazy" />
+            <img src="/assets/logo-novadigital.webp" alt="Nova Digital" className="relative top-[2px] h-6 w-auto opacity-90" loading="lazy" />
           </p>
         </div>
       </Container>
