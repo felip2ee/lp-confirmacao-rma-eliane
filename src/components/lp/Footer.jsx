@@ -41,10 +41,15 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col gap-4 border-t border-ivory/10 pt-6 text-xs text-ivory/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Eliane Moreira. Todos os direitos reservados.</p>
-          <p className="flex items-center gap-2">
+          <a
+            href="https://www.instagram.com/novadigital.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-ivory/80"
+          >
             <span>Desenvolvido por</span>
             <img src="/assets/logo-novadigital.webp" alt="Nova Digital" className="relative top-[2px] h-6 w-auto opacity-90" loading="lazy" />
-          </p>
+          </a>
         </div>
       </Container>
 
