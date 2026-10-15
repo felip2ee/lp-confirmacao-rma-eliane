@@ -16,7 +16,7 @@ export default function Footer() {
   const conteudo = modal ? rodape[modal] : null;
 
   return (
-    <footer className="border-t border-accent/15 bg-dark pb-28 pt-14 md:pb-10">
+    <footer className="border-t border-accent/15 bg-dark pb-10 pt-14">
       <Container>
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
@@ -37,7 +37,8 @@ export default function Footer() {
           </nav>
         </div>
 
-        <p className="mt-10 max-w-3xl text-xs leading-relaxed text-ivory/45">{rodape.aviso}</p>
+        <p className="mt-10 max-w-3xl text-[11px] leading-relaxed text-ivory/40">{rodape.promessa}</p>
+        <p className="mt-3 max-w-3xl text-[11px] leading-relaxed text-ivory/40">{rodape.aviso}</p>
 
         <div className="mt-8 flex flex-col gap-4 border-t border-ivory/10 pt-6 text-xs text-ivory/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Eliane Moreira. Todos os direitos reservados.</p>

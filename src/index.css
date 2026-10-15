@@ -70,6 +70,17 @@
   left: 160%;
 }
 
+/* Foto do topo: some pro fundo escuro na parte de baixo, como na referência */
+.photo-fade {
+  -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 97%);
+  mask-image: linear-gradient(to bottom, #000 62%, transparent 97%);
+}
+
+/* Brilho dourado forte atrás da foto do topo */
+.gold-glow {
+  background: radial-gradient(closest-side, rgba(220, 164, 82, 0.6), rgba(220, 164, 82, 0.22) 45%, rgba(220, 164, 82, 0.05) 68%, transparent 75%);
+}
+
 /* Halo dourado atrás da foto da Eliane */
 .gold-halo {
   background: radial-gradient(closest-side, rgba(220, 164, 82, 0.38), rgba(220, 164, 82, 0.08) 60%, transparent 72%);
