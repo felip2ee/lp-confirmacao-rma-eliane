@@ -13,7 +13,7 @@ export const obrigado = {
   produto: 'Mentoria RMA',
   formularioUrl: 'https://yayforms.link/m3kXj2l',
   whatsappNumero: '556381089024',
-  whatsappMensagem: 'Olá, acabei de me aplicar pra Mentoria RMA e quero adiantar a confirmação do meu horário.',
+  whatsappMensagem: 'Olá, quero adiantar o meu agendamento para a consulta com a Rainha do Crédito.',
 
   eyebrow: 'Quase lá!',
   titulo: 'Sua aplicação',
