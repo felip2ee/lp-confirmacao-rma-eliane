@@ -6,8 +6,8 @@
 // ---------------------------------------------------------------------
 // OBRIGADO (página /obrigado, destino do formulário de aplicação da RMA)
 // Tela única, no modelo "quase lá": foto, agradece, manda confirmar no WhatsApp,
-// avisa que sem confirmação a vaga vai pra outro, botão de WhatsApp.
-// A promessa (análise 360° + plano de ação) fica só no rodapé, em letra pequena.
+// avisa que sem confirmação a vaga vai pra outro, botão de WhatsApp e, abaixo,
+// os dois blocos do que a Rainha entrega (análise 360° + plano de ação).
 // ---------------------------------------------------------------------
 export const obrigado = {
   produto: 'Mentoria RMA',
@@ -25,6 +25,17 @@ export const obrigado = {
   furarFila: 'Pra furar a fila e falar com o time o quanto antes, clique no botão abaixo:',
   cta: 'Quero falar com o time',
 
+  promessaTitulo: 'O que a Rainha vai entregar na sua consulta',
+  entregas: [
+    {
+      titulo: 'Análise 360° da sua empresa',
+      texto: 'A Rainha olha a empresa do jeito que o banco olha: faturamento, tempo de CNPJ, histórico de pagamento da empresa e dos sócios, dívidas, garantias e o que já foi pedido e negado.',
+    },
+    {
+      titulo: 'Plano de ação personalizado',
+      texto: 'O que ajustar, em que ordem e qual linha pedir pra ser bem visto no banco e ter acesso aos melhores créditos, com o teto que a sua empresa sustenta.',
+    },
+  ],
 };
 
 export const obrigadoWhatsappHref = obrigado.whatsappNumero
@@ -36,8 +47,7 @@ export const obrigadoWhatsappHref = obrigado.whatsappNumero
 // ---------------------------------------------------------------------
 export const rodape = {
   marca: 'Rainha do Crédito',
-  descricao: 'Mentoria RMA: orientação em crédito empresarial com Eliane Moreira.',
-  promessa: 'Na consulta, a Rainha faz uma análise 360° da sua empresa e entrega um plano de ação personalizado pra você ser bem visto no banco e ter acesso aos melhores créditos. Preencher o formulário não garante uma das vagas: elas são limitadas e cada interessado é avaliado com cuidado.',
+  descricao: 'Orientação em crédito empresarial com Eliane Moreira.',
   aviso: 'Esta página não é de um banco, não concede empréstimos e não garante aprovação de crédito. Quem decide é a instituição financeira. A consulta é orientação profissional sobre o seu caso.',
   termos: {
     titulo: 'Termos de uso',
