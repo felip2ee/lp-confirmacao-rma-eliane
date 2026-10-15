@@ -17,7 +17,7 @@ export default function Obrigado() {
 
       <section className="relative overflow-hidden">
         <Container>
-          <header className="flex justify-center py-5 sm:py-6">
+          <header className="flex justify-center py-4 sm:py-6">
             <p className="flex items-center gap-2 font-display text-sm font-bold text-white sm:text-base">
               <Crown size={18} className="text-accent" aria-hidden="true" />
               Rainha do Crédito
@@ -35,19 +35,19 @@ export default function Obrigado() {
             alt="Eliane Moreira, a Rainha do Crédito, fazendo o gesto de dinheiro com as mãos"
             width="2000"
             height="1227"
-            className="hero-photo photo-fade mx-auto w-[150%] max-w-none relative left-[6.5%] shrink-0 object-contain sm:left-[4.25%] sm:w-full"
+            className="hero-photo photo-fade mx-auto w-[120%] max-w-none relative left-[5.1%] shrink-0 object-contain sm:left-[4.25%] sm:w-full"
             fetchpriority="high"
           />
         </div>
 
         <Container>
-          <div className="mx-auto -mt-10 max-w-2xl pb-16 text-center sm:-mt-16">
-            <p className="hero-in font-display text-3xl font-extrabold uppercase tracking-wide text-white sm:text-4xl md:text-5xl">{obrigado.eyebrow}</p>
-            <h1 className="hero-in mt-2 font-display text-2xl font-bold uppercase leading-tight tracking-wide text-ivory/90 sm:text-3xl md:text-4xl">
+          <div className="mx-auto -mt-12 max-w-2xl pb-12 text-center sm:-mt-16">
+            <p className="hero-in font-display text-[1.75rem] font-extrabold uppercase tracking-wide text-white sm:text-4xl md:text-5xl">{obrigado.eyebrow}</p>
+            <h1 className="hero-in mt-1 font-display text-xl font-bold uppercase leading-tight tracking-wide text-ivory/90 sm:text-3xl md:text-4xl">
               {obrigado.titulo} <span className="text-accent">{obrigado.tituloDestaque}</span>
             </h1>
 
-            <div className="hero-in-2 mt-8 space-y-4 text-base leading-relaxed text-ivory/80 sm:text-lg">
+            <div className="hero-in-2 mt-5 space-y-3 text-[0.95rem] leading-relaxed text-ivory/80 sm:mt-8 sm:space-y-4 sm:text-lg">
               {obrigado.atencao.map((a) => (
                 <p key={a.forte}>
                   {a.antes}
@@ -57,7 +57,7 @@ export default function Obrigado() {
               <p>{obrigado.furarFila}</p>
             </div>
 
-            <div className="hero-in-3 mt-8">
+            <div className="hero-in-3 mt-6 sm:mt-8">
               <Button href={obrigadoWhatsappHref} size="lg" target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={22} aria-hidden="true" />
                 {obrigado.cta}
