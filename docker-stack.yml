@@ -1,0 +1,40 @@
+version: "3.8"
+
+# TROCAR antes do deploy: a imagem (repositório no GHCR) e o domínio no Host().
+services:
+  lp-confirmacao-rma:
+    image: ghcr.io/felip2ee/lp-confirmacao-rma-eliane:latest
+    networks:
+      - RainhaNet
+    deploy:
+      mode: replicated
+      replicas: 2
+      placement:
+        constraints:
+          - node.role == manager
+      update_config:
+        order: start-first
+        failure_action: rollback
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=RainhaNet
+
+        # HTTPS
+        - traefik.http.routers.lp-confirmacao-rma.rule=Host(`confirmacao.elianearainhadocredito.com`)
+        - traefik.http.routers.lp-confirmacao-rma.entrypoints=websecure
+        - traefik.http.routers.lp-confirmacao-rma.tls.certresolver=letsencryptresolver
+        - traefik.http.routers.lp-confirmacao-rma.priority=1
+        - traefik.http.routers.lp-confirmacao-rma.service=lp-confirmacao-rma
+        - traefik.http.services.lp-confirmacao-rma.loadbalancer.server.port=80
+        - traefik.http.services.lp-confirmacao-rma.loadbalancer.passHostHeader=true
+
+networks:
+  RainhaNet:
+    external: true
+    name: RainhaNet
