@@ -24,4 +24,4 @@ Página única de "obrigado": destino do formulário de aplicação da Mentoria 
 ## Pendências pra publicar
 - Domínio no `docker-stack.yml` (está `confirmacao.elianearainhadocredito.com`).
 - Configurar o redirect final do yayforms pra esse domínio.
-- Confirmar se o container GTM-W8463MHG (o mesmo do Beabá) é o certo pra esta página.
+- GTM: container próprio desta página, GTM-MG96VGS3 (em `index.html`).
