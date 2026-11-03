@@ -3,7 +3,7 @@ import { Crown, X } from 'lucide-react';
 import { rodape } from '../../content';
 import { Container } from './ui';
 
-export default function Footer() {
+export default function Footer({ dados = rodape }) {
   const [modal, setModal] = useState(null); // null | 'termos' | 'privacidade'
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function Footer() {
     return () => window.removeEventListener('keydown', onKey);
   }, [modal]);
 
-  const conteudo = modal ? rodape[modal] : null;
+  const conteudo = modal ? dados[modal] : null;
 
   return (
     <footer className="border-t border-accent/15 bg-dark pb-10 pt-14">
@@ -22,22 +22,22 @@ export default function Footer() {
           <div className="max-w-sm">
             <p className="flex items-center gap-2 font-display text-lg font-bold text-white">
               <Crown size={18} className="text-accent" aria-hidden="true" />
-              {rodape.marca}
+              {dados.marca}
             </p>
-            <p className="mt-2 text-sm text-ivory/60">{rodape.descricao}</p>
+            <p className="mt-2 text-sm text-ivory/60">{dados.descricao}</p>
           </div>
 
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-ivory/60" aria-label="Documentos">
             <button type="button" onClick={() => setModal('termos')} className="hover:text-accent">
-              {rodape.termos.titulo}
+              {dados.termos.titulo}
             </button>
             <button type="button" onClick={() => setModal('privacidade')} className="hover:text-accent">
-              {rodape.privacidade.titulo}
+              {dados.privacidade.titulo}
             </button>
           </nav>
         </div>
 
-        <p className="mt-10 max-w-3xl text-xs leading-relaxed text-ivory/45">{rodape.aviso}</p>
+        <p className="mt-10 max-w-3xl text-xs leading-relaxed text-ivory/45">{dados.aviso}</p>
 
         <div className="mt-8 flex flex-col gap-4 border-t border-ivory/10 pt-6 text-xs text-ivory/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Eliane Moreira. Todos os direitos reservados.</p>

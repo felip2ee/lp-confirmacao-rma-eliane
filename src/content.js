@@ -38,9 +38,10 @@ export const obrigado = {
   ],
 };
 
-export const obrigadoWhatsappHref = obrigado.whatsappNumero
-  ? `https://wa.me/${obrigado.whatsappNumero}?text=${encodeURIComponent(obrigado.whatsappMensagem)}`
-  : '#';
+export const whatsappHref = (numero, mensagem) =>
+  numero ? `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}` : '#';
+
+export const obrigadoWhatsappHref = whatsappHref(obrigado.whatsappNumero, obrigado.whatsappMensagem);
 
 // ---------------------------------------------------------------------
 // RODAPÉ
@@ -56,5 +57,70 @@ export const rodape = {
   privacidade: {
     titulo: 'Política de privacidade',
     texto: 'Os dados que você informa (nome, contato e as informações da empresa enviadas no formulário pré-consulta) são usados apenas pra avaliar a sua aplicação, entrar em contato e, se aceita, preparar e realizar a consulta. Não compartilhamos seus dados com terceiros. O pagamento é processado por plataforma segura; não armazenamos dados de cartão.',
+  },
+};
+
+// ---------------------------------------------------------------------
+// CORRETORES DE DINHEIRO (páginas /corretores/aprovado e /corretores/reprovado,
+// destinos do formulário de aplicação pra Reunião Estratégica 1 a 1)
+// Aprovado: ele já escolheu o horário no formulário, só falta confirmar com o time.
+// Reprovado: encerra sem queimar a ponte. Sem link de agenda em hipótese alguma.
+// ---------------------------------------------------------------------
+export const corretores = {
+  produto: 'Corretores de Dinheiro',
+  formularioUrl: '#', // TROCAR: link do formulário de aplicação dos corretores
+  instagramUrl: 'https://www.instagram.com/', // TROCAR: perfil que mostra a análise de crédito derrubando vendas
+  whatsappNumero: '556381089024',
+
+  aprovado: {
+    whatsappMensagem: 'Olá, quero confirmar a minha Reunião Estratégica.',
+    eyebrow: 'Seu perfil passou!',
+    titulo: 'Agora falta um passo:',
+    tituloDestaque: 'confirmar a sua reunião.',
+    subtitulo: 'Na reunião, a gente vai calcular quanto de comissão você já deixou na mesa com clientes reprovados e desenhar como colocar a comissão do financiamento no seu bolso na próxima venda.',
+    atencao: [
+      { antes: 'Fique de olho no seu WhatsApp, pois ', forte: 'o nosso time vai entrar em contato pra confirmar o horário que você escolheu.' },
+      { antes: 'Horário escolhido é horário travado. Se não confirmar, ', forte: 'a vaga vai pra outro corretor.' },
+    ],
+    furarFila: 'Pra confirmar agora e garantir o seu horário, clique no botão abaixo:',
+    cta: 'Quero confirmar minha reunião',
+
+    combinadoTitulo: 'Um combinado antes da reunião:',
+    combinado: 'Essa agenda é disputada. Se não puder comparecer, remarque com pelo menos 24 horas de antecedência pelo WhatsApp. Quem falta sem avisar perde a vaga e não entra em nova agenda.',
+    duvidas: 'Dúvidas antes da reunião? Chama no WhatsApp.',
+  },
+
+  reprovado: {
+    eyebrow: 'Obrigado pelo interesse.',
+    titulo: 'Neste momento, seu perfil',
+    tituloDestaque: 'não entra na agenda das Reuniões Estratégicas.',
+    corpo: [
+      'As vagas de reunião são poucas e priorizamos corretores que já estão fechando vendas financiadas todo mês, porque é nesse cenário que o processo gera resultado mais rápido: cliente aprovado na análise e comissão do financiamento entrando na mesma venda.',
+      'Isso não é um "não" definitivo. É um "ainda não".',
+    ],
+    encaixeTitulo: 'Quando você se encaixa:',
+    encaixe: [
+      'Fechou sua primeira venda de imóvel financiado (MCMV ou SBPE)',
+      'Está com CRECI ativo',
+      'Teve cliente travado ou reprovado na análise do banco',
+    ],
+    encaixeFecho: 'Bateu esses três pontos? Preencha o formulário de novo que sua aplicação será reavaliada.',
+    ctaFormulario: 'Refazer a aplicação',
+    consolacao: 'Enquanto isso, siga o Instagram: é lá que mostramos, na prática, como a análise de crédito derruba vendas e o que dá pra fazer antes de mandar o cliente pro banco.',
+    ctaInstagram: 'Seguir no Instagram',
+    fecho: 'Guarde esta página. O mercado de financiado está crescendo e a sua primeira venda financiada pode estar mais perto do que parece.',
+  },
+};
+
+export const rodapeCorretores = {
+  ...rodape,
+  descricao: 'Crédito imobiliário na prática pra corretores, com Eliane Moreira.',
+  termos: {
+    ...rodape.termos,
+    texto: 'A Reunião Estratégica do Corretores de Dinheiro é um serviço de orientação prestado por Eliane Moreira. Não constitui concessão de crédito nem promessa de aprovação de financiamento: a decisão é sempre da instituição financeira. O envio do formulário de aplicação não garante vaga. As vagas são limitadas e cada corretor é avaliado individualmente.',
+  },
+  privacidade: {
+    ...rodape.privacidade,
+    texto: 'Os dados que você informa (nome, contato e as respostas do formulário de aplicação) são usados apenas pra avaliar a sua aplicação, entrar em contato e, se aceita, preparar e realizar a reunião. Não compartilhamos seus dados com terceiros.',
   },
 };

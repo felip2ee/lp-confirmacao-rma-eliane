@@ -2,14 +2,20 @@
 
 Página única de "obrigado": destino do formulário de aplicação da Mentoria RMA (yayforms, link em `obrigado.formularioUrl` dentro de `src/content.js`). Modelo "quase lá": agradece, manda confirmar o horário no WhatsApp, avisa que sem confirmação a vaga vai pra outro, botão de WhatsApp e os dois blocos do que a Rainha entrega (análise 360° + plano de ação). Irmã das LPs do Beabá e da Consulta: mesma stack, mesma identidade, mesmo deploy.
 
+## Rotas (sem router: `src/App.jsx` escolhe a página pelo pathname; o nginx devolve `index.html` pra qualquer caminho)
+- `/` → `Obrigado.jsx` (Mentoria RMA).
+- `/corretores/aprovado` → `CorretoresAprovado.jsx`: perfil passou, já escolheu o horário no formulário, falta confirmar com o time no WhatsApp.
+- `/corretores/reprovado` → `CorretoresReprovado.jsx`: encerra sem queimar a ponte. Sem link de agenda nessa página em hipótese alguma.
+- Topo compartilhado (foto + chamada + título) em `src/components/lp/Hero.jsx`.
+
 ## Stack
 - Vite 5 + React 18 + Tailwind 3. Ícones: lucide-react. Fontes via @fontsource (Montserrat 700/800, Open Sans 400/600/700), sem Google Fonts.
 - `npm install` → `npm run dev` (local) → `npm run build` (gera `dist/`).
 - Deploy: Dockerfile (node → nginx), workflow em `.github/workflows/docker-image.yml` publica `ghcr.io/felip2ee/lp-confirmacao-rma-eliane` a cada push na `main`, `docker-stack.yml` sobe no Swarm atrás do Traefik.
 
 ## Onde mexer
-- **Toda a copy está em `src/content.js`**, no objeto `obrigado`: nome do produto, número e mensagem do WhatsApp, textos de atenção, blocos da promessa. Rodapé e termos em `rodape`.
-- Layout: `src/pages/Obrigado.jsx`. Rodapé em `src/components/lp/Footer.jsx`.
+- **Toda a copy está em `src/content.js`**: objeto `obrigado` (RMA) e `corretores` (`aprovado` e `reprovado`, Corretores de Dinheiro). Rodapé e termos em `rodape` (RMA) e `rodapeCorretores`.
+- Layout: `src/pages/*.jsx`. Rodapé em `src/components/lp/Footer.jsx` (recebe `dados` pra trocar os termos).
 - Imagens em `public/assets/` (cutout da Eliane fazendo o gesto de dinheiro, logo Nova Digital).
 
 ## Identidade visual (tailwind.config.js)
@@ -24,4 +30,5 @@ Página única de "obrigado": destino do formulário de aplicação da Mentoria 
 ## Pendências pra publicar
 - Domínio no `docker-stack.yml` (está `confirmacao.elianearainhadocredito.com`).
 - Configurar o redirect final do yayforms pra esse domínio.
-- GTM: container próprio desta página, GTM-MG96VGS3 (em `index.html`).
+- GTM: container próprio desta página, GTM-MG96VGS3 (em `index.html`). As páginas dos corretores empurram `thanks_aprovado` e `thanks_reprovado` no dataLayer.
+- Corretores: trocar `formularioUrl` e `instagramUrl` em `corretores` (`src/content.js`) e conferir se o WhatsApp é o mesmo da RMA.
