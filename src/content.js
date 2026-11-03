@@ -13,17 +13,17 @@ export const obrigado = {
   produto: 'Mentoria RMA',
   formularioUrl: 'https://yayforms.link/m3kXj2l',
   whatsappNumero: '556381089024',
-  whatsappMensagem: 'Olá, quero adiantar o meu agendamento para a reunião estratégica.',
+  whatsappMensagem: 'Olá, quero confirmar o meu agendamento para a reunião estratégica.',
 
   eyebrow: 'Quase lá!',
   titulo: 'Sua aplicação',
   tituloDestaque: 'foi enviada.',
   atencao: [
-    { antes: 'Atenção: fique de olho no seu WhatsApp, pois ', forte: 'você vai precisar confirmar o seu horário com o nosso time.' },
-    { antes: 'Se não confirmar, ', forte: 'a vaga pode ir pra outro empresário.' },
+    { antes: 'Atenção: fique de olho no seu WhatsApp, pois ', forte: 'o nosso time vai entrar em contato pra você confirmar o seu horário.' },
+    { antes: 'O contato segue a ordem de chegada das aplicações. Se não confirmar quando chegar a sua vez, ', forte: 'a vaga pode ir pra outro empresário.' },
   ],
-  furarFila: 'Pra furar a fila e falar com o time o quanto antes, clique no botão abaixo:',
-  cta: 'Quero falar com o time',
+  furarFila: 'Pra furar a fila e confirmar o seu agendamento agora, clique no botão abaixo:',
+  cta: 'Quero confirmar meu agendamento',
 
   promessaTitulo: 'O que a Rainha vai entregar na sua consulta',
   entregas: [

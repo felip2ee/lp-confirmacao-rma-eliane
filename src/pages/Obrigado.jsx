@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Crown, MessageCircle, ScanSearch, ClipboardList } from 'lucide-react';
+import { MessageCircle, ScanSearch, ClipboardList } from 'lucide-react';
 import { obrigado, obrigadoWhatsappHref } from '../content';
 import { Container, Button } from '../components/lp/ui';
 import Footer from '../components/lp/Footer';
@@ -16,17 +16,8 @@ export default function Obrigado() {
       <div className="noise-overlay" aria-hidden="true" />
 
       <section className="relative overflow-hidden">
-        <Container>
-          <header className="flex justify-center py-4 sm:py-6">
-            <p className="flex items-center gap-2 font-display text-sm font-bold text-white sm:text-base">
-              <Crown size={18} className="text-accent" aria-hidden="true" />
-              Rainha do Crédito
-            </p>
-          </header>
-        </Container>
-
         {/* Foto sobre o brilho dourado, sumindo pro fundo */}
-        <div className="relative mx-auto flex w-full max-w-2xl justify-center overflow-hidden">
+        <div className="relative mx-auto flex w-full max-w-2xl justify-center overflow-hidden pt-4 sm:pt-6">
           <div className="gold-glow absolute inset-x-[-10%] top-[-4%] -z-10 aspect-square rounded-full sm:inset-x-[5%] sm:top-[2%]" aria-hidden="true" />
           <div className="pointer-events-none absolute inset-x-[18%] top-[2%] -z-10 aspect-square rounded-full border border-accent/25" aria-hidden="true" />
           <div className="pointer-events-none absolute inset-x-[26%] top-[10%] -z-10 aspect-square rounded-full border border-accent/15" aria-hidden="true" />
