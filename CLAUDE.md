@@ -16,7 +16,7 @@ Página única de "obrigado": destino do formulário de aplicação da Mentoria 
 ## Onde mexer
 - **Toda a copy está em `src/content.js`**: objeto `obrigado` (RMA) e `corretores` (`aprovado` e `reprovado`, Corretores de Dinheiro). Rodapé e termos em `rodape` (RMA) e `rodapeCorretores`.
 - Layout: `src/pages/*.jsx`. Rodapé em `src/components/lp/Footer.jsx` (recebe `dados` pra trocar os termos).
-- Imagens em `public/assets/` (cutout da Eliane fazendo o gesto de dinheiro, logo Nova Digital).
+- Imagens em `public/assets/` (cutout da Eliane fazendo o gesto de dinheiro, logo Nova Digital). Prints de prova social da RMA em `public/assets/provas/`, sempre recortados e sem dados de terceiros.
 
 ## Identidade visual (tailwind.config.js)
 - primary `#063A29` · secondary `#105B41` · accent (dourado) `#DCA452` · background `#04281C` · dark `#02150E` · ivory `#F3EEE4`

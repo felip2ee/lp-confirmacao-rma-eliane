@@ -25,6 +25,18 @@ export const obrigado = {
   furarFila: 'Pra furar a fila e confirmar o seu agendamento agora, clique no botão abaixo:',
   cta: 'Quero confirmar meu agendamento',
 
+  // Prints reais, recortados e com nomes de terceiros borrados. Sem prometer aprovação: o aviso fica junto.
+  provasTitulo: 'Alguns créditos aprovados de clientes da Rainha',
+  provas: [
+    { imagem: '/assets/provas/aprovado-3-7-milhoes.webp', valor: 'R$ 3.726.000 + R$ 458 mil' },
+    { imagem: '/assets/provas/aprovado-1-5-milhao.webp', valor: 'R$ 1.517.000' },
+    { imagem: '/assets/provas/aprovado-800-mil.webp', valor: 'R$ 800.000' },
+    { imagem: '/assets/provas/aprovado-555-mil.webp', valor: 'R$ 555.680' },
+    { imagem: '/assets/provas/aprovado-173-mil.webp', valor: 'R$ 173.300 em 48x' },
+    { imagem: '/assets/provas/laudo-954-mil.webp', valor: 'Imóvel de R$ 954 mil, laudo aprovado' },
+  ],
+  provasAviso: 'Casos reais. Cada caso é avaliado individualmente e quem aprova é sempre o banco.',
+
   promessaTitulo: 'O que a Rainha vai entregar na sua consulta',
   entregas: [
     {

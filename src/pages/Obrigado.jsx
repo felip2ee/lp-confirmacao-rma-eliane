@@ -35,6 +35,30 @@ export default function Obrigado() {
         </div>
       </Hero>
 
+      {/* ========================== PROVAS ========================== */}
+      <section className="pb-14 md:pb-20">
+        <Container>
+          <h2 className="mx-auto max-w-2xl text-center font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">
+            {obrigado.provasTitulo}
+          </h2>
+          <div className="mx-auto mt-10 max-w-5xl gap-6 sm:columns-2 lg:columns-3">
+            {obrigado.provas.map((p) => (
+              <figure key={p.imagem} className="mb-6 break-inside-avoid overflow-hidden rounded-2xl border border-accent/30 bg-primary/60">
+                <img src={p.imagem} alt={`Print de conversa no WhatsApp: ${p.valor}`} className="w-full" loading="lazy" />
+                <figcaption className="p-4 font-display text-lg font-extrabold leading-tight text-accent">{p.valor}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <p className="mx-auto mt-2 max-w-2xl text-center text-sm leading-relaxed text-ivory/60">{obrigado.provasAviso}</p>
+          <div className="mt-8 text-center">
+            <Button href={obrigadoWhatsappHref} size="lg" target="_blank" rel="noopener noreferrer">
+              <MessageCircle size={22} aria-hidden="true" />
+              {obrigado.cta}
+            </Button>
+          </div>
+        </Container>
+      </section>
+
       {/* ========================== PROMESSA ========================== */}
       <section className="bg-primary py-14 md:py-20">
         <Container>
